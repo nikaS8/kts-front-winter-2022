@@ -7,13 +7,20 @@ export type RequestParams<ReqT> = {
     method: HTTPMethod;
     endpoint: string;
     headers: Record<string, string>;
+
+    /**
+     * Объект с данными запроса.
+     * - Для GET-запроса данные превращаются в query-строку и добавляются в endpoint
+     * - Для POST-запроса данные преобразуются к формату JSON и добавляются в тело запроса (необязательное требование)
+     */
     data: ReqT;
 }
 
 export enum StatusHTTP {
+    // TODO: заполнить
     OK = 200,
     NOT_FOUND = 404,
-    BAD_STATUS = 'BAD_STATUS'
+    UNEXPECTED_ERROR = 'UNEXPECTED_ERROR'
 }
 
 export type ApiResponse<SuccessT, ErrorT> =
@@ -25,6 +32,11 @@ export type ApiResponse<SuccessT, ErrorT> =
     | {
     success: false;
     data: ErrorT;
+    status: StatusHTTP;
+}
+    |{
+    success: false;
+    data: any;
     status: StatusHTTP;
 };
 

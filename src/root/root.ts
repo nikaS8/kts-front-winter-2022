@@ -5,7 +5,12 @@ const gitHubStore = new GitHubStore();
 const EXAMPLE_ORGANIZATION = 'ktsstudio';
 
 gitHubStore.getOrganizationReposList({
-  org: EXAMPLE_ORGANIZATION
+  organizationName: EXAMPLE_ORGANIZATION
 }).then(result => {
+  if(result.success){
+    console.log(result.data.map(repo => {
+      return repo.name
+    }));
+  }
   console.log(result);
 })

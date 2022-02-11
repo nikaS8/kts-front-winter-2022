@@ -1,17 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import {Button} from "antd";
 import './App.css';
-
-import GitHubStore from './store/GitHubStore/GitHubStore';
-const gitHubStore = new GitHubStore();
-const EXAMPLE_ORGANIZATION = 'ktsstudio';
-gitHubStore.getOrganizationReposList({
-  org: EXAMPLE_ORGANIZATION
-}).then(result => {
-  console.log(result);
-})
-
 
 function App() {
   const sayHello:string = 'Hello!!';
