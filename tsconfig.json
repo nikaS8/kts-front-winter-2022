@@ -1,0 +1,35 @@
+{
+  "extends": "./config-overrides.js",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@root/*": ["./root/*"],
+      "@shared/*": ["./shared/*"],
+      "@store/*": ["./store/*"],
+      "@ApiStore/*": ["./shared/store/ApiStore/*"],
+      "@GitHubStore/*": ["./store/GitHubStore/*"],
+    },
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [
+    "src"
+  ]
+}
